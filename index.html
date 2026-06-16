@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Dominic Chinemelum — Future Web Architect</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23111111'/><path d='M38 30L18 50L38 70M62 30L82 50L62 70M56 20L44 80' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="tailwind.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-canvas text-neutral-800 font-medium antialiased selection:bg-neutral-100 selection:text-neutral-900">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="glass fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="font-display text-base font-bold text-neutral-900 tracking-tight flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-neutral-900"></span>
+        daniel.com
+      </a>
+      <ul class="hidden md:flex items-center gap-6">
+        <li><a href="#about" class="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors">About</a></li>
+        <li><a href="#skills" class="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors">Skills</a></li>
+        <li><a href="#projects" class="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors">Projects</a></li>
+        <li><a href="#philosophy" class="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors">Philosophy</a></li>
+        <li><a href="#roadmap" class="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors">Journey</a></li>
+        <li><a href="#contact" class="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors">Contact</a></li>
+      </ul>
+      <div class="hidden md:flex items-center">
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="btn-primary">
+          Let's Connect
+        </button>
+      </div>
+      <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-1 text-neutral-900" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-neutral-950 transition-transform duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-neutral-950 transition-opacity duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-neutral-950 transition-transform duration-300" id="bar3"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-border bg-white">
+      <ul class="flex flex-col p-6 gap-5">
+        <li><a href="#about" class="text-base font-medium text-neutral-700" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#skills" class="text-base font-medium text-neutral-700" onclick="closeMobileMenu()">Skills</a></li>
+        <li><a href="#projects" class="text-base font-medium text-neutral-700" onclick="closeMobileMenu()">Projects</a></li>
+        <li><a href="#philosophy" class="text-base font-medium text-neutral-700" onclick="closeMobileMenu()">Philosophy</a></li>
+        <li><a href="#roadmap" class="text-base font-medium text-neutral-700" onclick="closeMobileMenu()">Journey</a></li>
+        <li><a href="#contact" class="text-base font-medium text-neutral-700" onclick="closeMobileMenu()">Contact</a></li>
+        <li class="pt-2">
+          <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); closeMobileMenu();" class="btn-primary w-full justify-center">
+            Let's Connect
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center pt-20 bg-canvas">
+    <div class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-16">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-xs font-medium text-neutral-800">
+          <span class="w-1.5 h-1.5 rounded-full bg-success animate-pulse"></span>
+          AVAILABLE FOR OPPORTUNITIES · NIGERIA 🇳🇬
+        </div>
+        <p class="text-sm font-semibold tracking-wider text-brand-accent uppercase">Hi, I'm Daniel</p>
+        <h1 class="font-display font-extrabold tracking-[-0.04em] text-neutral-900 leading-none" style="font-size: clamp(2.25rem, 6vw, 3.75rem);">
+          Bridging complex logic and clean design.
+        </h1>
+        <p class="text-neutral-700 text-lg leading-relaxed max-w-xl">
+          I am a web developer candidate focused on building structured, highly accessible, and performance-driven web layouts. Welcome to my active workshop.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Let's Connect
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">
+            View Journey
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 flex flex-col items-center">
+        <!-- Interactive Cal.com Scheduler Widget -->
+        <div class="bg-white border border-neutral-200 rounded-2xl shadow-sm p-6 w-full max-w-sm space-y-4 reveal">
+          <div class="flex items-center gap-3 pb-3 border-b border-neutral-100">
+            <img src="daniel.PNG" alt="Daniel Dominic" class="w-10 h-10 rounded-full object-cover border border-neutral-200" />
+            <div>
+              <p class="font-display text-sm font-bold text-neutral-900 leading-none">Daniel Dominic</p>
+              <p class="text-[11px] text-neutral-500 mt-1">15 Min Virtual Chat</p>
+            </div>
+          </div>
+          
+          <div class="space-y-2">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">1. Select Date</p>
+            <div class="grid grid-cols-3 gap-2">
+              <button onclick="selectDate(this, 'Monday')" class="date-btn active flex flex-col items-center justify-center py-2">
+                <span class="text-[10px] uppercase font-semibold text-neutral-400">Mon</span>
+                <span class="text-sm font-bold text-neutral-800">22</span>
+              </button>
+              <button onclick="selectDate(this, 'Tuesday')" class="date-btn flex flex-col items-center justify-center py-2">
+                <span class="text-[10px] uppercase font-semibold text-neutral-400">Tue</span>
+                <span class="text-sm font-bold text-neutral-800">23</span>
+              </button>
+              <button onclick="selectDate(this, 'Wednesday')" class="date-btn flex flex-col items-center justify-center py-2">
+                <span class="text-[10px] uppercase font-semibold text-neutral-400">Wed</span>
+                <span class="text-sm font-bold text-neutral-800">24</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">2. Select Time</p>
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="selectTime(this, '09:00 AM')" class="slot-btn active">09:00 AM</button>
+              <button onclick="selectTime(this, '10:30 AM')" class="slot-btn">10:30 AM</button>
+              <button onclick="selectTime(this, '02:00 PM')" class="slot-btn">02:00 PM</button>
+              <button onclick="selectTime(this, '04:30 PM')" class="slot-btn">04:30 PM</button>
+            </div>
+          </div>
+
+          <div class="space-y-3 pt-1">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">3. Contact Details</p>
+            <input id="sched-name" type="text" class="form-field text-xs py-2" placeholder="Your Name" />
+            <button onclick="triggerScheduler()" class="btn-primary w-full text-xs justify-center py-2 h-9">
+              Confirm Chat
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="relative py-24 bg-canvas border-t border-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 reveal">
+        <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">01 // About</span>
+        <h2 class="font-display font-bold text-3xl text-neutral-900">About Me</h2>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-4 reveal">
+          <div class="feature-card text-center space-y-4">
+            <div class="flex justify-center">
+              <div class="profile-photo-frame">
+                <img src="daniel.PNG" alt="Daniel Dominic Chinemelum" />
+              </div>
+            </div>
+            <div>
+              <p class="font-display font-bold text-lg text-neutral-900">Daniel Dominic</p>
+              <p class="font-display font-semibold text-sm text-neutral-700">Chinemelum</p>
+              <p class="text-xs font-mono mt-1 text-neutral-500">Frontend Dev Aspirant</p>
+              <p class="text-xs font-mono text-neutral-500">📍 Nigeria</p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <div class="bg-white rounded-lg p-3 border border-border">
+                <p class="font-display text-lg font-bold text-neutral-900">4+</p>
+                <p class="text-[10px] text-neutral-500 uppercase font-semibold">Technologies</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-border">
+                <p class="font-display text-lg font-bold text-neutral-900">∞</p>
+                <p class="text-[10px] text-neutral-500 uppercase font-semibold">Curiosity</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-center gap-2 text-xs font-medium text-brand-accent pt-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+              Deep-diving into React
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-8 space-y-5 reveal text-neutral-700 text-base leading-relaxed">
+          <p class="text-neutral-800 text-lg">
+            I am driven by understanding how software works from first principles. What began as clean layout design has evolved into a dedicated pursuit of clean client-side logic and robust modular interfaces.
+          </p>
+          <p>
+            My learning methodology is built on a straightforward rule: logic serves the end-user. Beautiful typography and structured alignments are not just decorative—they form the core structure of usability, speed, and accessibility.
+          </p>
+          <p>
+            Currently, I am spending my time refining my skills in HTML5 semantical structures, CSS systems, JavaScript layout patterns, and component structures in React. I want to contribute to an engineering team that appreciates clean code.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="skill-badge">first-principles</span>
+            <span class="skill-badge">clean-code</span>
+            <span class="skill-badge">user-first</span>
+            <span class="skill-badge">accessibility</span>
+            <span class="skill-badge">continuous-learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="relative py-24 bg-surface-soft border-t border-b border-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 reveal">
+        <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">02 // Skills</span>
+        <h2 class="font-display font-bold text-3xl text-neutral-900">Active Learning</h2>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 reveal">
+        <article class="bg-white border border-border rounded-xl p-6 lg:col-span-5 space-y-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold bg-neutral-100 text-neutral-800">&lt;/&gt;</div>
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-display font-bold text-lg text-neutral-900">HTML5</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-200">Active Focus</span>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Mastering semantic document trees, ARIA specifications, and metadata structures for SEO performance.</p>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-medium text-neutral-700"><span>Proficiency</span><span>72%</span></div>
+            <div class="h-1.5 rounded-full bg-neutral-100 overflow-hidden">
+              <div class="h-full bg-neutral-950 rounded-full" style="width: 72%;"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white border border-border rounded-xl p-6 lg:col-span-4 space-y-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold bg-neutral-100 text-neutral-800">{ }</div>
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-display font-bold text-lg text-neutral-900">CSS3</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 border border-blue-200">Active Focus</span>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Building layouts with flexbox, grid, and designing robust CSS variables systems for unified page scales.</p>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-medium text-neutral-700"><span>Proficiency</span><span>68%</span></div>
+            <div class="h-1.5 rounded-full bg-neutral-100 overflow-hidden">
+              <div class="h-full bg-neutral-950 rounded-full" style="width: 68%;"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white border border-border rounded-xl p-6 lg:col-span-3 flex flex-col justify-between space-y-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold bg-neutral-100 text-neutral-800">◈</div>
+          <div>
+            <h3 class="font-display font-bold text-base text-neutral-900 mb-1">Tailwind CSS</h3>
+            <p class="text-neutral-700 text-xs leading-relaxed">Designing clean responsive scales using modular utility classes.</p>
+          </div>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 border border-neutral-200 self-start">Active learning</span>
+        </article>
+
+        <article class="bg-white border border-border rounded-xl p-6 lg:col-span-5 space-y-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold bg-neutral-100 text-neutral-800">JS</div>
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-display font-bold text-lg text-neutral-900">JavaScript</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-200">Active Focus</span>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Manipulating DOM trees, configuring event structures, working with Promises, async patterns, and ES6 specs.</p>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-medium text-neutral-700"><span>Proficiency</span><span>58%</span></div>
+            <div class="h-1.5 rounded-full bg-neutral-100 overflow-hidden">
+              <div class="h-full bg-neutral-950 rounded-full" style="width: 58%;"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white border border-border rounded-xl p-6 lg:col-span-7 space-y-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold bg-neutral-100 text-neutral-800">⚛</div>
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-display font-bold text-lg text-neutral-900">React</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-brand-accent/10 text-brand-accent border border-brand-accent/20 animate-pulse">Deep-diving</span>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Understanding state management, components lifecycle, hooks (useState, useEffect), and modular layout declarations.</p>
+          </div>
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-medium text-neutral-700"><span>Proficiency</span><span>35%</span></div>
+            <div class="h-1.5 rounded-full bg-neutral-100 overflow-hidden">
+              <div class="h-full bg-neutral-950 rounded-full" style="width: 35%;"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="relative py-24 bg-canvas">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 reveal">
+        <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">03 // Portfolio</span>
+        <h2 class="font-display font-bold text-3xl text-neutral-900">Selected Work</h2>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+
+      <!-- Projects Sub-navigation Filter -->
+      <div class="flex justify-center mb-8 reveal">
+        <div class="nav-pill-group">
+          <button onclick="filterProjects(this, 'all')" class="nav-pill-item active">All Projects</button>
+          <button onclick="filterProjects(this, 'react')" class="nav-pill-item">React / TS</button>
+          <button onclick="filterProjects(this, 'vanilla')" class="nav-pill-item">HTML / CSS / JS</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+        <!-- Nebula Dashboard -->
+        <article data-category="vanilla" class="bg-white border border-border rounded-xl overflow-hidden flex flex-col group shadow-sm transition-all duration-300">
+          <div class="relative w-full h-56 overflow-hidden bg-neutral-50 border-b border-border cursor-pointer" onclick="openModal('nebula')">
+            <img src="nebula_thumb.png" alt="Nebula Dashboard Thumbnail" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-neutral-950/5 group-hover:bg-neutral-950/0 transition-colors"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="text-xs px-2.5 py-1 rounded-full bg-white/90 text-neutral-900 font-semibold border border-neutral-200 backdrop-blur-sm">UI/UX & Frontend</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-display font-bold text-xl text-neutral-900 mb-2">Nebula Dashboard</h3>
+            <p class="text-neutral-700 text-sm leading-relaxed mb-6">
+              A high-performance analytics dashboard designed for modern enterprise usage. Features complex data visualization components and a sleek dark-mode-first aesthetic.
+            </p>
+            <div class="mt-auto pt-4 border-t border-border flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] uppercase font-bold text-neutral-500 tracking-wider">Tech:</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-neutral-100 text-neutral-800">HTML/CSS</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-yellow-50 text-yellow-800 border border-yellow-100">JS</span>
+              </div>
+              <button onclick="openModal('nebula')" class="text-xs font-semibold text-neutral-900 flex items-center gap-1 hover:text-neutral-600 transition-colors">
+                Details →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- WealthPath Pathfinder -->
+        <article data-category="react" class="bg-white border border-border rounded-xl overflow-hidden flex flex-col group shadow-sm transition-all duration-300">
+          <div class="relative w-full h-56 overflow-hidden bg-neutral-50 border-b border-border cursor-pointer" onclick="openModal('wealthpath')">
+            <img src="wealthpath.png" alt="WealthPath Pathfinder Thumbnail" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-neutral-950/5 group-hover:bg-neutral-950/0 transition-colors"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="text-xs px-2.5 py-1 rounded-full bg-white/90 text-neutral-900 font-semibold border border-neutral-200 backdrop-blur-sm">Fintech & Fullstack</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-display font-bold text-xl text-neutral-900 mb-2">WealthPath Pathfinder</h3>
+            <p class="text-neutral-700 text-sm leading-relaxed mb-6">
+              A lightning-fast, highly responsive capital funding portal designed to secure pre-approvals in 60 seconds with WhatsApp business workflow integrations.
+            </p>
+            <div class="mt-auto pt-4 border-t border-border flex justify-between items-center">
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] uppercase font-bold text-neutral-500 tracking-wider">Tech:</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-100">React</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-indigo-50 text-indigo-800 border border-indigo-100">TS</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-cyan-50 text-cyan-800 border border-cyan-100">Tailwind</span>
+              </div>
+              <button onclick="openModal('wealthpath')" class="text-xs font-semibold text-neutral-900 flex items-center gap-1 hover:text-neutral-600 transition-colors">
+                Details →
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section id="philosophy" class="relative py-24 bg-surface-soft border-t border-b border-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 reveal">
+        <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">04 // Core</span>
+        <h2 class="font-display font-bold text-3xl text-neutral-900">Problem Solving Philosophy</h2>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+        <div class="bg-white border border-border rounded-xl p-8 space-y-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-neutral-100 text-neutral-800">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-neutral-900">Decompose First</h3>
+          <p class="text-neutral-700 text-sm leading-relaxed">
+            Every complex implementation is simply a set of smaller, predictable units. I map tasks to minimal components before writing execution logic.
+          </p>
+        </div>
+
+        <div class="bg-white border border-border rounded-xl p-8 space-y-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-neutral-100 text-neutral-800">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M10 13l-2 2 2 2"/><path d="M14 17l2-2-2-2"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-neutral-900">Write to be Read</h3>
+          <p class="text-neutral-700 text-sm leading-relaxed">
+            Code runs on machines but is maintained by humans. Documenting components, properties, and file hierarchies keeps iterations low-friction.
+          </p>
+        </div>
+
+        <div class="bg-white border border-border rounded-xl p-8 space-y-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-neutral-100 text-neutral-800">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-neutral-900">User Problem First</h3>
+          <p class="text-neutral-700 text-sm leading-relaxed">
+            Aesthetics are structured around access and speed. I continuously test: is it lightweight? Does it render immediately? Is it keyboard-friendly?
+          </p>
+        </div>
+      </div>
+
+      <!-- Mockup Showcase Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-10 reveal">
+        <!-- Status Terminal Block -->
+        <div class="lg:col-span-5 flex flex-col h-full justify-between">
+          <div class="terminal-wrap w-full h-full flex flex-col" aria-label="Status terminal">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-border bg-neutral-50 rounded-t-xl">
+              <span class="w-2.5 h-2.5 rounded-full bg-neutral-200"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-neutral-200"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-neutral-200"></span>
+              <span class="ml-auto font-mono text-xs text-neutral-500">status.js</span>
+            </div>
+            <div class="p-5 font-mono text-xs space-y-3 leading-relaxed text-neutral-800 flex-grow bg-white rounded-b-xl">
+              <div><span class="text-neutral-500">$</span> <span class="font-bold">whoami</span></div>
+              <div class="text-brand-accent pl-3">daniel_dominic_chinemelum</div>
+              <div><span class="text-neutral-500">$</span> <span class="font-bold">cat status.config</span></div>
+              <div class="pl-3 space-y-1.5">
+                <div id="term-line-1" class="opacity-0"></div>
+                <div id="term-line-2" class="opacity-0"></div>
+                <div id="term-line-3" class="opacity-0"></div>
+                <div id="term-line-4" class="opacity-0"></div>
+                <div id="term-line-5" class="opacity-0"></div>
+              </div>
+              <div class="flex items-center gap-1 pt-2">
+                <span class="text-neutral-500">$</span><span class="ml-1 text-neutral-800 font-bold">_</span><span class="type-cursor"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Window Mockup -->
+        <div class="lg:col-span-7 bg-white border border-border rounded-xl overflow-hidden flex flex-col">
+          <div class="flex items-center gap-2 px-5 py-3 border-b border-border bg-neutral-50">
+            <span class="w-2.5 h-2.5 rounded-full bg-neutral-200"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-neutral-200"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-neutral-200"></span>
+            <span class="font-mono text-xs text-neutral-500 ml-2">philosophy.js</span>
+          </div>
+          <pre class="p-6 text-xs font-mono leading-6 overflow-x-auto text-neutral-800 bg-white flex-grow rounded-b-xl"><code><span class="text-neutral-500">// My approach to any developer challenge</span>
+function <span class="text-neutral-900 font-bold">solveChallenge</span>(problem) {
+  <span class="text-neutral-500">// Step 1: Understand layout, structures and constraints</span>
+  const breakdown = <span class="text-neutral-900 font-bold">decompose</span>(problem);
+
+  <span class="text-neutral-500">// Step 2: Build iteratively & clean</span>
+  const solution = breakdown.map(step => {
+    return <span class="text-neutral-900 font-bold">solveSmall</span>(step);
+  });
+
+  <span class="text-neutral-500">// Step 3: Document component API</span>
+  return <span class="text-neutral-900 font-bold">document</span>(solution, { readable: true });
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section id="roadmap" class="relative py-24 bg-canvas">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 reveal">
+        <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">05 // Journey</span>
+        <h2 class="font-display font-bold text-3xl text-neutral-900">Learning Journey</h2>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+
+      <div class="relative pl-12">
+        <div class="timeline-line">
+          <div id="timeline-progress" class="absolute top-0 left-0 w-full bg-primary transition-all duration-500 origin-top" style="height: 0%;"></div>
+        </div>
+        
+        <!-- Milestone Origin -->
+        <div class="relative mb-10 reveal">
+          <div class="timeline-dot" style="top: 4px;"></div>
+          <div class="bg-white border border-border rounded-xl p-6 space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-neutral-100 text-neutral-700 font-semibold">Origin</span>
+              <h3 class="font-display font-bold text-base text-neutral-900">The Spark of Curiosity</h3>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Discovered code via a high school script design challenge. Started searching down the rabbit-hole of web layouts and browser rendering engines.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 1 -->
+        <div class="relative mb-10 reveal">
+          <div class="timeline-dot" style="top: 4px;"></div>
+          <div class="bg-white border border-border rounded-xl p-6 space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-orange-50 text-orange-600 border border-orange-100 font-semibold">Phase 1</span>
+              <h3 class="font-display font-bold text-base text-neutral-900">HTML & CSS Foundations</h3>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Acquired core structures of document trees, element flows, flex layouts, grid variables, and pixel scales. Built initial semantic mock pages.</p>
+            <div class="flex gap-1.5 pt-1">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">HTML5</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">CSS3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="relative mb-10 reveal">
+          <div class="timeline-dot" style="top: 4px;"></div>
+          <div class="bg-white border border-border rounded-xl p-6 space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-yellow-50 text-yellow-600 border border-yellow-100 font-semibold">Phase 2</span>
+              <h3 class="font-display font-bold text-base text-neutral-900">JavaScript & Interactivity</h3>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Implemented client side operations, event configurations, DOM integrations, asynchronously fetched APIs, and ES6 functions.</p>
+            <div class="flex gap-1.5 pt-1">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">JS ES6+</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">DOM API</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">Fetch API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="relative mb-10 reveal">
+          <div class="timeline-dot" style="top: 4px;"></div>
+          <div class="bg-white border border-brand-accent/30 rounded-xl p-6 space-y-2 relative">
+            <div class="absolute top-4 right-4 flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-accent/10 text-brand-accent text-[9px] font-semibold tracking-wide uppercase">
+              <span class="w-1 h-1 rounded-full bg-brand-accent animate-pulse"></span>
+              Active
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-blue-50 text-blue-600 border border-blue-100 font-semibold">Phase 3</span>
+              <h3 class="font-display font-bold text-base text-neutral-900">React & Modern Frameworks</h3>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Immersed in components architectures, properties flow, state updates, hooks pipelines, and CSS variables layout binding. Rebuilding previous page layout components.</p>
+            <div class="flex gap-1.5 pt-1">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">React</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">Tailwind</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="relative reveal opacity-60">
+          <div class="timeline-dot border-dashed" style="top: 4px;"></div>
+          <div class="bg-neutral-50 border border-dashed border-border rounded-xl p-6 space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-neutral-100 text-neutral-700 font-semibold">Future</span>
+              <h3 class="font-display font-bold text-base text-neutral-900">Full-Stack & Deployment</h3>
+            </div>
+            <p class="text-neutral-700 text-sm leading-relaxed">Planned next: Server architectures (Node.js, Express), databases, schema query design, and testing protocols.</p>
+            <div class="flex gap-1.5 pt-1">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">Node.js</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100">Next.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-24 bg-surface-soft border-t border-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12 reveal">
+        <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">06 // Connect</span>
+        <h2 class="font-display font-bold text-3xl text-neutral-900">Let's Connect</h2>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5 space-y-6 reveal">
+          <div>
+            <h3 class="font-display font-bold text-2xl text-neutral-900 mb-3">Ready to Work Together?</h3>
+            <p class="text-neutral-700 leading-relaxed text-sm">
+              I am seeking internship or junior frontend opportunities. If you need a developer who values clean logic and values specifications, drop a line.
+            </p>
+          </div>
+          
+          <div class="space-y-3">
+            <a href="https://github.com/Itz-Daniel" target="_blank" rel="noopener noreferrer" class="bg-white border border-border flex items-center gap-4 p-4 rounded-xl hover:shadow-sm transition-all group">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-neutral-100">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-neutral-700">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-neutral-800 group-hover:text-brand-accent transition-colors">GitHub</p>
+                <p class="text-xs text-neutral-500">github.com/Itz-Daniel</p>
+              </div>
+            </a>
+
+            <a href="https://wa.me/2349041554214" target="_blank" rel="noopener noreferrer" class="bg-white border border-border flex items-center gap-4 p-4 rounded-xl hover:shadow-sm transition-all group">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 bg-green-50 text-green-600 border border-green-100">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-neutral-800 group-hover:text-brand-accent transition-colors">WhatsApp</p>
+                <p class="text-xs text-neutral-500">Message me directly</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 reveal">
+          <form id="contactForm" class="bg-white border border-border rounded-xl p-8 space-y-4" onsubmit="handleFormSubmit(event)" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label for="name" class="text-xs font-semibold text-neutral-800">Your Name</label>
+                <input id="name" type="text" class="form-field" placeholder="Enter name" required />
+              </div>
+              <div class="space-y-1.5">
+                <label for="email" class="text-xs font-semibold text-neutral-800">Email Address</label>
+                <input id="email" type="email" class="form-field" placeholder="you@example.com" required />
+              </div>
+            </div>
+            
+            <div class="space-y-1.5">
+              <label for="subject" class="text-xs font-semibold text-neutral-800">Subject</label>
+              <input id="subject" type="text" class="form-field" placeholder="How can I help you?" required />
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="message" class="text-xs font-semibold text-neutral-800">Message</label>
+              <textarea id="message" rows="4" class="form-field resize-none" placeholder="Write message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full justify-center">
+              Send Message
+            </button>
+            
+            <div id="formSuccess" class="hidden text-center font-mono text-xs py-2 bg-green-50 text-green-800 border border-green-200 rounded-lg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-surface-dark py-16 text-neutral-500 border-t border-neutral-900">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="md:col-span-6 space-y-4">
+        <h3 class="font-display font-bold text-lg text-white tracking-tight flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-white"></span>
+          daniel.com
+        </h3>
+        <p class="text-xs max-w-sm text-neutral-500">
+          Future Web Architect. Focused on clean semantic HTML layouts, modular CSS properties, client side functions, and components interfaces.
+        </p>
+      </div>
+
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="text-xs font-bold uppercase text-white tracking-wider">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="#skills" class="hover:text-white transition-colors">Skills</a></li>
+          <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="#philosophy" class="hover:text-white transition-colors">Philosophy</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="text-xs font-bold uppercase text-white tracking-wider">Social</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="https://github.com/Itz-Daniel" target="_blank" rel="noopener" class="hover:text-white transition-colors">GitHub</a></li>
+          <li><a href="https://wa.me/2349041554214" target="_blank" rel="noopener" class="hover:text-white transition-colors">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 mt-12 pt-8 border-t border-neutral-900 flex justify-between items-center text-xs text-neutral-700 font-mono">
+      <div>&copy; <span id="year"></span> Daniel Dominic. All rights reserved.</div>
+      <div>Design Analysis Alpha</div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden opacity-0 transition-opacity duration-300">
+    <div id="modal-content-box" class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white border border-border rounded-xl shadow-lg m-4 transform scale-95 transition-transform duration-300">
+      <button onclick="closeModal()" class="absolute top-4 right-4 z-50 text-neutral-500 hover:text-neutral-900 font-sans text-2xl transition-colors">&times;</button>
+      <div id="modal-body" class="flex flex-col md:flex-row">
+        <!-- Content will be swapped via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
