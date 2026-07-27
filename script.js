@@ -69,24 +69,75 @@ function typeText(el, text, speed = 45) {
   });
 }
 
+const philosophyCodeString = 
+`<span class="text-neutral-500">// My approach to any developer challenge</span>
+function <span class="text-neutral-900 font-bold">solveChallenge</span>(problem) {
+  <span class="text-neutral-500">// Step 1: Understand layout, structures and constraints</span>
+  const breakdown = <span class="text-neutral-900 font-bold">decompose</span>(problem);
+
+  <span class="text-neutral-500">// Step 2: Build iteratively & clean</span>
+  const solution = breakdown.map(step => {
+    return <span class="text-neutral-900 font-bold">solveSmall</span>(step);
+  });
+
+  <span class="text-neutral-500">// Step 3: Document component API</span>
+  return <span class="text-neutral-900 font-bold">document</span>(solution, { readable: true });
+}`;
+
+function typeHTML(el, htmlString, speed = 8) {
+  return new Promise(resolve => {
+    let currentHTML = "";
+    let i = 0;
+    const interval = setInterval(() => {
+      if (htmlString[i] === '<') {
+        const closingIndex = htmlString.indexOf('>', i);
+        if (closingIndex !== -1) {
+          currentHTML += htmlString.substring(i, closingIndex + 1);
+          i = closingIndex + 1;
+        } else {
+          currentHTML += htmlString[i];
+          i++;
+        }
+      } else {
+        currentHTML += htmlString[i];
+        i++;
+      }
+      el.innerHTML = currentHTML;
+      if (i >= htmlString.length) {
+        clearInterval(interval);
+        resolve();
+      }
+    }, speed);
+  });
+}
+
+async function runPhilosophyCode() {
+  const el = document.getElementById('philosophy-code');
+  if (!el) return;
+  el.innerHTML = '';
+  await new Promise(r => setTimeout(r, 400));
+  await typeHTML(el, philosophyCodeString, 12);
+}
+
 async function runTerminal() {
-  await new Promise(r => setTimeout(r, 600));
+  await new Promise(r => setTimeout(r, 400));
   for (const line of termLines) {
     const el = document.getElementById(line.id);
     if (!el) continue;
     el.style.opacity = '1';
     el.innerHTML = `<span style="color:${line.keyColor}">${line.key}</span>: `;
-    await new Promise(r => setTimeout(r, 80));
+    await new Promise(r => setTimeout(r, 60));
     const valSpan = document.createElement('span');
     valSpan.style.color = line.valColor;
     valSpan.style.fontWeight = '600';
     el.appendChild(valSpan);
-    await typeText(valSpan, `"${line.value}";`);
-    await new Promise(r => setTimeout(r, 180));
+    await typeText(valSpan, `"${line.value}";`, 12);
+    await new Promise(r => setTimeout(r, 120));
   }
 }
 
-const heroObs = new IntersectionObserver((entries) => {
+// 1. Observer for Philosophy Section scroll trigger
+const philosophyObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       termLines.forEach(line => {
@@ -96,14 +147,21 @@ const heroObs = new IntersectionObserver((entries) => {
           el.style.opacity = '0';
         }
       });
+      
+      const codeEl = document.getElementById('philosophy-code');
+      if (codeEl) {
+        codeEl.innerHTML = '';
+      }
+      
       runTerminal();
-      heroObs.disconnect();
+      runPhilosophyCode();
+      philosophyObs.disconnect();
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.15 });
 
-const philosophySection = document.getElementById('philosophy');
-if (philosophySection) heroObs.observe(philosophySection);
+const terminalWrap = document.querySelector('.terminal-wrap');
+if (terminalWrap) philosophyObs.observe(terminalWrap);
 
 /* ============================================================
    4. CONTACT FORM — Direct to WhatsApp
@@ -304,35 +362,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ============================================================
-   8. CAL.COM INTERACTIVE SCHEDULER & FILTER FUNCTIONS
+   8. PROJECT FILTER FUNCTIONS
    ============================================================ */
-let selectedDateVal = 'Monday';
-let selectedTimeVal = '09:00 AM';
-
-function selectDate(btn, dayName) {
-  document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  selectedDateVal = dayName;
-}
-
-function selectTime(btn, timeStr) {
-  document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  selectedTimeVal = timeStr;
-}
-
-function triggerScheduler() {
-  const nameInput = document.getElementById('sched-name');
-  const name = nameInput.value.trim() || 'Visitor';
-  
-  const text = `Hello Daniel! \n\nI'd like to book a 15 min virtual chat with you.\n*Name:* ${name}\n*Proposed Slot:* ${selectedDateVal} at ${selectedTimeVal}`;
-  const encodedText = encodeURIComponent(text);
-  const phoneNumber = "2349041554214";
-  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedText}`;
-  
-  window.open(whatsappURL, '_blank');
-  nameInput.value = '';
-}
 
 function filterProjects(btn, category) {
   document.querySelectorAll('.nav-pill-item').forEach(b => b.classList.remove('active'));

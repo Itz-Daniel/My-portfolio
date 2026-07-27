@@ -281,52 +281,74 @@ h4,
   background: #9ca3af;
 }
 
-/* ── Interactive Cal.com Scheduler ───────────────────────── */
-.slot-btn {
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  color: #111111;
-  border-radius: 6px;
-  padding: 8px 12px;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s ease;
+/* ── Tablet & Mobile Optimization Overrides ──────────────── */
+@media (max-width: 1024px) {
+  section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+  .max-w-6xl {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
 }
 
-.slot-btn:hover {
-  background-color: #f9fafb;
-  border-color: #d1d5db;
-}
-
-.slot-btn.active {
-  background-color: #111111;
-  border-color: #111111;
-  color: #ffffff;
-}
-
-.date-btn {
-  border: 1px solid transparent;
-  background-color: transparent;
-  color: #6b7280;
-  border-radius: 8px;
-  padding: 8px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.date-btn:hover {
-  background-color: #f3f4f6;
-  color: #111111;
-}
-
-.date-btn.active {
-  background-color: #ffffff;
-  border-color: #e5e7eb;
-  color: #111111;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+@media (max-width: 768px) {
+  /* Navigation adjustments */
+  #navbar {
+    height: 3.5rem !important;
+  }
+  #navbar .max-w-6xl {
+    height: 3.5rem !important;
+  }
+  
+  /* Hero section spacing */
+  #hero {
+    min-h-screen: auto !important;
+    padding-top: 5.5rem !important;
+    padding-bottom: 4rem !important;
+  }
+  #hero .grid {
+    gap: 2.5rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  /* Responsive typography scaling */
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.25 !important;
+  }
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Timeline spacing */
+  .timeline-line {
+    left: 12px !important;
+  }
+  .timeline-dot {
+    left: -28px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+  #roadmap .pl-12 {
+    padding-left: 2rem !important;
+  }
+  
+  /* Feature cards & modal padding */
+  .feature-card {
+    padding: 1.5rem !important;
+  }
+  #modal-content-box {
+    margin: 1rem !important;
+  }
+  #modal-body {
+    flex-direction: column !important;
+  }
+  #modal-body > div {
+    width: 100% !important;
+  }
 }
 
 /* ── Preserve Login Styles for backward compatibility ────── */

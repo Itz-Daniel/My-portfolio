@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniel Dominic Chinemelum — Future Web Architect</title>
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23111111'/><path d='M38 30L18 50L38 70M62 30L82 50L62 70M56 20L44 80' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>" />
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png?v=3" />
+  <link rel="apple-touch-icon" href="favicon.png?v=3" />
+  <link rel="shortcut icon" type="image/png" href="favicon.png?v=3" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -92,50 +93,10 @@
       </div>
 
       <div class="lg:col-span-5 flex flex-col items-center">
-        <!-- Interactive Cal.com Scheduler Widget -->
-        <div class="bg-white border border-neutral-200 rounded-2xl shadow-sm p-6 w-full max-w-sm space-y-4 reveal">
-          <div class="flex items-center gap-3 pb-3 border-b border-neutral-100">
-            <img src="daniel.PNG" alt="Daniel Dominic" class="w-10 h-10 rounded-full object-cover border border-neutral-200" />
-            <div>
-              <p class="font-display text-sm font-bold text-neutral-900 leading-none">Daniel Dominic</p>
-              <p class="text-[11px] text-neutral-500 mt-1">15 Min Virtual Chat</p>
-            </div>
-          </div>
-          
-          <div class="space-y-2">
-            <p class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">1. Select Date</p>
-            <div class="grid grid-cols-3 gap-2">
-              <button onclick="selectDate(this, 'Monday')" class="date-btn active flex flex-col items-center justify-center py-2">
-                <span class="text-[10px] uppercase font-semibold text-neutral-400">Mon</span>
-                <span class="text-sm font-bold text-neutral-800">22</span>
-              </button>
-              <button onclick="selectDate(this, 'Tuesday')" class="date-btn flex flex-col items-center justify-center py-2">
-                <span class="text-[10px] uppercase font-semibold text-neutral-400">Tue</span>
-                <span class="text-sm font-bold text-neutral-800">23</span>
-              </button>
-              <button onclick="selectDate(this, 'Wednesday')" class="date-btn flex flex-col items-center justify-center py-2">
-                <span class="text-[10px] uppercase font-semibold text-neutral-400">Wed</span>
-                <span class="text-sm font-bold text-neutral-800">24</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <p class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">2. Select Time</p>
-            <div class="grid grid-cols-2 gap-2">
-              <button onclick="selectTime(this, '09:00 AM')" class="slot-btn active">09:00 AM</button>
-              <button onclick="selectTime(this, '10:30 AM')" class="slot-btn">10:30 AM</button>
-              <button onclick="selectTime(this, '02:00 PM')" class="slot-btn">02:00 PM</button>
-              <button onclick="selectTime(this, '04:30 PM')" class="slot-btn">04:30 PM</button>
-            </div>
-          </div>
-
-          <div class="space-y-3 pt-1">
-            <p class="text-[10px] font-bold uppercase tracking-wider text-neutral-500">3. Contact Details</p>
-            <input id="sched-name" type="text" class="form-field text-xs py-2" placeholder="Your Name" />
-            <button onclick="triggerScheduler()" class="btn-primary w-full text-xs justify-center py-2 h-9">
-              Confirm Chat
-            </button>
+        <!-- Premium Dimensional Photo Frame for Daniel -->
+        <div class="w-full max-w-sm rounded-2xl overflow-hidden border border-border shadow-md bg-white p-3 reveal transform hover:rotate-1 hover:scale-[1.02] transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl bg-neutral-50">
+            <img src="daniel.PNG" alt="Daniel Dominic Chinemelum" class="w-full h-full object-cover grayscale-[15%] contrast-[105%]" />
           </div>
         </div>
       </div>
@@ -450,19 +411,7 @@
             <span class="w-2.5 h-2.5 rounded-full bg-neutral-200"></span>
             <span class="font-mono text-xs text-neutral-500 ml-2">philosophy.js</span>
           </div>
-          <pre class="p-6 text-xs font-mono leading-6 overflow-x-auto text-neutral-800 bg-white flex-grow rounded-b-xl"><code><span class="text-neutral-500">// My approach to any developer challenge</span>
-function <span class="text-neutral-900 font-bold">solveChallenge</span>(problem) {
-  <span class="text-neutral-500">// Step 1: Understand layout, structures and constraints</span>
-  const breakdown = <span class="text-neutral-900 font-bold">decompose</span>(problem);
-
-  <span class="text-neutral-500">// Step 2: Build iteratively & clean</span>
-  const solution = breakdown.map(step => {
-    return <span class="text-neutral-900 font-bold">solveSmall</span>(step);
-  });
-
-  <span class="text-neutral-500">// Step 3: Document component API</span>
-  return <span class="text-neutral-900 font-bold">document</span>(solution, { readable: true });
-}</code></pre>
+          <pre class="p-6 text-xs font-mono leading-6 overflow-x-auto text-neutral-800 bg-white flex-grow rounded-b-xl"><code id="philosophy-code"></code></pre>
         </div>
       </div>
     </div>
